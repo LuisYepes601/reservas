@@ -1,3 +1,20 @@
+
+document.addEventListener("DOMContentLoaded", () => {
+    const usuario = localStorage.getItem("usuario");
+
+    if (!usuario) {
+        Swal.fire({
+            icon: "warning",
+            title: "No has iniciado sesión",
+            text: "Por favor inicia sesión para acceder a las reservas.",
+            confirmButtonColor: "#2e7d32"
+        }).then(() => {
+            window.location.href = "https://inicio-sesion-three.vercel.app/index.html";
+        });
+    }
+});
+
+
 document.addEventListener("DOMContentLoaded", () => {
     const btnHome = document.getElementById("btnHome");
     btnHome.addEventListener("click", () => {
